@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  background-color: white;
+}
+
+.mainContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  background-color: white;
+  padding: 50px;
+  border-radius: 16px;
+  min-height: 250px;
+  line-height: 1.5;
+  min-width: 200px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.collageContainer {
+  display: flex;
+  flex-basis: 100%;
+  gap: 10px;
+  background-color: white;
+}
+
+.column {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#tile1 {
+  flex-basis: 60%;
+  background-color: hsl(0, 100%, 95%);
+}
+
+#tile3 {
+  background-color: hsl(210, 100%, 95%);
+  flex-basis: 40%;
+}
+
+#tile4 {
+  background-color: hsl(270, 100%, 95%);
+  flex-basis: 60%;
+}
+
+#tile2 {
+  background-color: hsl(120, 100%, 95%);
+  flex-basis: 40%;
+}
+
+.appNameWatermark {
+  font-size: 1.25em;
+  font-family: 'Pacifico', cursive;
+  margin-inline: 20px;
+  user-select: none;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  opacity: 0.5;
+  color: gray;
+  position: fixed;
+}
+
+@media only screen and (min-width: 600px) {
+  .appNameWatermark {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .appNameWatermark {
+    font-size: 1.75em;
+  }
+}
+
+.logoutButton {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
