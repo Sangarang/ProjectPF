@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+  background-color: var(--backgroundColour);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hide {
+  display: none !important;
+}
+
+html[data-theme-hue='red'] {
+  --hue: 0;
+  --primaryColour: hsl(var(--hue), 100%, 40%);
+  --backgroundColour: hsl(var(--hue), 100%, 95%);
+}
+
+html[data-theme-hue='orange'] {
+  --hue: 33;
+  --primaryColour: hsl(var(--hue), 100%, 30%);
+  --backgroundColour: hsl(var(--hue), 100%, 93%);
+}
+
+html[data-theme-hue='green'] {
+  --hue: 120;
+  --primaryColour: hsl(var(--hue), 100%, 25%);
+  --backgroundColour: hsl(var(--hue), 100%, 95%);
+}
+
+html[data-theme-hue='blue'] {
+  --hue: 210;
+  --primaryColour: hsl(var(--hue), 100%, 40%);
+  --backgroundColour: hsl(var(--hue), 100%, 95%);
+}
+
+html[data-theme-hue='purple'] {
+  --hue: 270;
+  --primaryColour: hsl(var(--hue), 100%, 50%);
+  --backgroundColour: hsl(var(--hue), 100%, 95%);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bbbbbb;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.mainContainer {
+  display: grid;
+  column-gap: 200px;
+  row-gap: 25px;
+  grid-template-columns: min-content max-content;
+  grid-template-rows: 430px min-content;
+}
+
+#welcomeModal {
+  margin-block: auto;
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+#letsgoButton {
+  display: inline-block;
+  text-align: center;
+  background-color: var(--primaryColour);
+  border: none;
+  color: #ffffff;
+  padding: 16px 32px;
+  border-radius: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  margin-block: 20px;
+  text-decoration: none;
+}
+
+.columnContainer {
+  margin: 20px auto;
+  border-radius: 10px;
+  width: 18vw;
+  min-width: 300px;
+  position: relative;
+  grid-area: 1 / 1 / 2 / 2;
+
+}
+
+.columnContainerHeader {
+  font-weight: bold;
+  padding-block: 10px;
+  padding-inline: 0px;
+  margin: 0px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 30px;
+  grid-column-gap: 10px;
+  align-items: center;
+  color: var(--primaryColour);
+}
+
+.columnContainerHeader p {
+  width: 100%;
+  margin: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.columnSub {
+  width: 100%;
+  font-size: 14px;
+}
+
+.task {
+  background: #fff;
+  outline-style: solid;
+  outline-width: 0px;
+  margin: 10px;
+  padding: 15px 18px 18px 15px;
+  border-radius: 4px;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: grid;
+  align-items: center;
+  cursor: pointer;
+}
+
+.task:hover {
+  box-shadow: 6px 6px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.task p {
+  display: inline;
+  margin: 5px 5px 5px 10px;
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.task .subtask p {
+  font-size: 12.5px;
+  margin: 5px 5px 5px 5px;
+}
+
+.taskSubContainer {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  padding-left: 7.5px;
+}
+
+.taskHeaderContainer {
+  display: grid;
+  grid-template-columns: 20px auto;
+  align-items: center;
+}
+
+.subtask {
+  display: grid;
+  grid-template-columns: 17px auto;
+  align-items: center;
+}
+
+.subtask:has(> p:empty) {
+  display: none !important;
+}
+
+.subtask:first-child {
+  margin-top: 5px;
+}
+
+.taskCompleted {
+  opacity: 0.85;
+}
+
+.taskCompleted:hover {
+  opacity: 1;
+}
+
+.taskCompleted .taskHeaderContainer {
+  text-decoration: line-through;
+}
+
+.taskCompleted:hover .taskHeaderContainer {
+  text-decoration: none;
+}
+
+.taskCompleted .taskHeaderContainer .checkButton {
+  background-image: url(/assets/square-check-solid.svg);
+}
+
+.taskCompleted .taskHeaderContainer .checkButton:hover {
+  background-image: url(/assets/square-check-solid.svg);
+}
+
+.taskCompleted.subtask {
+  text-decoration: line-through;
+  opacity: 0.85;
+}
+
+.taskCompleted.subtask:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+
+.taskCompleted.subtask .checkButton {
+  background-image: url(/assets/square-check-solid.svg);
+}
+
+.taskCompleted.subtask .checkButton:hover {
+  background-image: url(/assets/square-check-solid.svg);
+}
+
+.checkButton {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  cursor: pointer;
+  background-image: url(/assets/square-regular.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: hue-rotate(calc(calc(var(--hue) * 1deg) - 33deg));
+}
+
+.subtask .checkButton {
+  width: 17px;
+  height: 17px;
+}
+
+.checkButton:hover {
+  background-image: url(/assets/square-check-regular.svg);
+}
+
+
+progress::-webkit-progress-value {
+  border-radius: 0px 4px 4px 4px;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--primaryColour);
+}
+
+progress {
+  border-radius: 4px;
+  height: 3.25px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+progress::-webkit-progress-bar {
+  background-color: lightgrey;
+  border-radius: 0px 0px 4px 4px;
+}
+
+progress[value="0"] {
+  display: none !important;
+}
+
+progress[value="0"]+.progressBarLabel {
+  display: none !important;
+}
+
+.taskDueDate {
+  border-radius: 4px;
+  background-color: hsl(var(--hue), 100%, 90%);
+  width: fit-content;
+  padding: 2px 6px 2px 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.taskDueDateContainer {
+  margin-top: 10px;
+}
+
+.taskDueDateIcon {
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+  background-image: url(/assets/calendar-clock.svg);
+}
+
+.taskDueDateContainer:has(> small:empty) {
+  display: none !important;
+}
+
+.taskDueDateInputContainer small:empty {
+  display: none !important;
+}
+
+
+.task.priorityStatusEnabled {
+  padding-right: 10px;
+}
+
+.task.priorityStatusEnabled .taskHeaderContainer {
+  grid-template-columns: 20px auto 30px;
+}
+
+.priorityIcon {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+  align-self: start;
+}
+
+.priority-lower {
+  background-image: url(/assets/stat-minus-2.svg);
+  filter: invert(65%) sepia(76%) saturate(4135%) hue-rotate(161deg) brightness(104%) contrast(105%);
+}
+
+.priority-low {
+  background-image: url(/assets/stat-minus-1.svg);
+  filter: invert(81%) sepia(20%) saturate(6991%) hue-rotate(66deg) brightness(90%) contrast(88%);
+}
+
+.taskHeaderContainer .priority-null {
+  display: none !important;
+}
+
+.priority-medium {
+  background-image: url(/assets/stat-1.svg);
+  filter: invert(59%) sepia(54%) saturate(3994%) hue-rotate(3deg) brightness(106%) contrast(103%);
+}
+
+.priority-high {
+  background-image: url(/assets/stat-2.svg);
+  filter: invert(34%) sepia(60%) saturate(4129%) hue-rotate(1deg) brightness(101%) contrast(106%);
+}
+
+.priority-higher {
+  background-image: url(/assets/stat-3.svg);
+  filter: invert(13%) sepia(82%) saturate(6167%) hue-rotate(357deg) brightness(104%) contrast(115%);
+}
+
+.slideShowPanel {
+  text-align: center;
+  user-select: none;
+}
+
+.dot {
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  margin: 0 1px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+
+footer small {
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  margin: 20px;
+  color: grey;
+}
+
+.appNameWatermark {
+  font-size: 1.25em;
+  font-family: 'Pacifico', cursive;
+  margin-inline: 20px;
+  user-select: none;
+  z-index: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  opacity: 0.5;
+  color: gray;
+}
+
+@media only screen and (max-width: 600px) {
+  .appNameWatermark {
+    display: none;
+  }
+
+  footer small {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .appNameWatermark {
+    font-size: 1.5em;
+  }
+
+  .mainContainer {
+    grid-template-columns: auto;
+    grid-template-rows: min-content 430px min-content;
+  }
+
+  #welcomeModal {
+    grid-area: 1 / 1 / 2 / 2;
+    text-align: center;
+  }
+
+  .columnContainer {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+}
+
+@media only screen and (min-width: 992px) {
+  .appNameWatermark {
+    font-size: 1.75em;
+  }
+
+}

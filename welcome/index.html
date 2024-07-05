@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" data-theme-hue="orange">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - ProjectPF</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="mainContainer">
+        <div class="columnContainer" draggable="false">
+            <div class="columnContainerHeader handle">
+                <p>Tasks</p>
+            </div>
+            <div class="columnSub">
+                <div class="task handle" id="exampleTask1" draggable="false">
+                    <div class="taskHeaderContainer">
+                        <div class="checkButton"></div>
+                        <div class="priorityIcon priority-null"></div>
+                        <p>Read chapter 1</p>
+                    </div>
+                    <div class="taskSubContainer">
+                        <div class="subtask exampleSubtask1" draggable="false">
+                            <div class="checkButton"></div>
+                            <p></p>
+                            <div class="deleteTaskButton"></div>
+                        </div>
+                        <div class="subtask exampleSubtask2" draggable="false">
+                            <div class="checkButton"></div>
+                            <p></p>
+                        </div>
+                        <div class="subtask exampleSubtask3">
+                            <div class="checkButton"></div>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="taskDueDateContainer taskDueDate">
+                        <div class="taskDueDateIcon"></div><small></small>
+                    </div>
+                    <progress max="100" value="0" id="progressbar-exampleTask1"></progress><label
+                        class="progressBarLabel" for="progressbar-exampleTask1"></label>
+                </div>
+                <div class="task handle priorityStatusEnabled" id="exampleTask2" draggable="false">
+                    <div class="taskHeaderContainer">
+                        <div class="checkButton"></div>
+                        <div class="priorityIcon priority-high"></div>
+                        <p>Week 3 online quiz</p>
+                    </div>
+                    <div class="taskSubContainer">
+                        <div class="subtask exampleSubtask1" draggable="false">
+                            <div class="checkButton"></div>
+                            <p></p>
+                            <div class="deleteTaskButton"></div>
+                        </div>
+                        <div class="subtask exampleSubtask2" draggable="false">
+                            <div class="checkButton"></div>
+                            <p></p>
+                        </div>
+                        <div class="subtask exampleSubtask3">
+                            <div class="checkButton"></div>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="taskDueDateContainer taskDueDate">
+                        <div class="taskDueDateIcon"></div><small>Mar 1</small>
+                    </div>
+                    <progress max="100" value="0" id="progressbar-exampleTask2"></progress><label
+                        class="progressBarLabel" for="progressbar-exampleTask2"></label>
+                </div>
+                <div class="task handle" id="exampleTask3" draggable="false">
+                    <div class="taskHeaderContainer">
+                        <div class="checkButton"></div>
+                        <div class="priorityIcon priority-null"></div>
+                        <p>Research essay</p>
+                    </div>
+                    <div class="taskSubContainer">
+                        <div class="subtask taskCompleted exampleSubtask1" draggable="false">
+                            <div class="checkButton"></div>
+                            <p>Introduction</p>
+                            <div class="deleteTaskButton"></div>
+                        </div>
+                        <div class="subtask exampleSubtask2" draggable="false">
+                            <div class="checkButton"></div>
+                            <p>Body paragraphs</p>
+                        </div>
+                        <div class="subtask exampleSubtask3">
+                            <div class="checkButton"></div>
+                            <p>Conclusion</p>
+                        </div>
+                    </div>
+                    <div class="taskDueDateContainer taskDueDate">
+                        <div class="taskDueDateIcon"></div><small></small>
+                    </div>
+                    <progress max="100" value="30" id="progressbar-exampleTask3"></progress><label
+                        class="progressBarLabel" for="progressbar-exampleTask3"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="slideShowPanel">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <div id="welcomeModal">
+            <h1 id="welcomeModalHeader">Simple, easy, flexible</h1>
+            <h3 id="welcomeModalParagraph"> Organise tasks with ProjectPF</h3>
+            <a href="/log-in" id="letsgoButton" title="Log in">Log in</a>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <small>© Sang Le 2024</small>
+        <div class="appNameWatermark">
+            <p>ProjectPF.app</p>
+        </div>
+    </footer>
+</body>
+
+<script src="/welcome-bundle.js"></script>
+
+</html>
