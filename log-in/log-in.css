@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  background-color: white;
+}
+
+.hide {
+  display: none !important;
+}
+
+#loaderBackdrop {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: hsl(33, 100%, 93%);
+}
+
+#loaderContainer {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loader {
+  border: 4px solid hsl(33, 100%, 75%);
+  border-top: 4px solid hsl(33, 100%, 93%);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spinningLoader 2s linear infinite;
+}
+
+@keyframes spinningLoader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  background-color: white;
+  padding: 50px;
+  border-radius: 16px;
+}
+
+
+.loginContainerOrDivider span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.loginContainerOrDivider span::before {
+  border-bottom: 1px solid #c2c8d0;
+  content: "";
+  flex: 0 0 30%;
+  height: 50%;
+  margin-right: 10px;
+}
+
+.loginContainerOrDivider span::after {
+  border-bottom: 1px solid #c2c8d0;
+  content: "";
+  flex: 0 0 30%;
+  height: 50%;
+  margin-left: 10px;
+}
+
+input {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  margin-block: 5px;
+  width: 200px;
+}
+
+.confirmButton {
+  border-radius: 8px;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: large;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: lightgray;
+  margin-inline: auto;
+}
+
+.header {
+  cursor: pointer;
+}
+
+.login.header {
+  margin-right: 30px;
+}
+
+
+h2 .selected {
+  color: black !important;
+}
+
+.loginButton {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 200px;
+  margin-inline: auto;
+
+}
+
+.loginButton p {
+  padding-inline: 5px;
+  font-size: 14px;
+}
+
+.loginButton:hover {
+  background-color: #ddd;
+}
+
+.loginButtonImg {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  width: 18px;
+  height: 18px;
+  margin: 10px;
+  border-radius: 50%;
+  background-image: url(/assets/Google__G__Logo.svg);
+}
+
+.google .loginButtonImg {
+  background-image: url(/assets/Google__G__Logo.svg);
+}
+
+
+.collageContainer {
+  display: flex;
+  flex-basis: 100%;
+  gap: 10px;
+  background-color: white;
+}
+
+.column {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#tile1 {
+  flex-basis: 60%;
+  background-color: hsl(0, 100%, 95%);
+}
+
+#tile3 {
+  background-color: hsl(210, 100%, 95%);
+  flex-basis: 40%;
+}
+
+#tile4 {
+  background-color: hsl(270, 100%, 95%);
+  flex-basis: 60%;
+}
+
+#tile2 {
+  background-color: hsl(120, 100%, 95%);
+  flex-basis: 40%;
+}
+
+.appNameWatermark {
+  font-size: 1.25em;
+  font-family: 'Pacifico', cursive;
+  margin-inline: 20px;
+  user-select: none;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  opacity: 0.5;
+  color: gray;
+  position: fixed;
+}
+
+@media only screen and (min-width: 600px) {
+  .appNameWatermark {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .appNameWatermark {
+    font-size: 1.75em;
+  }
+}
+
+.valid {
+  text-decoration: line-through;
+  color: lightgray;
+}
+
+.passwordRequirements {
+  margin-top: 10px;
+}
+
+.errorMessage {
+  color: red;
+}
+
+
+.forgotPasswordButton {
+  font-size: smaller;
+  cursor: pointer;
+  display: inline-block;
+  margin-block: 15px;
+}
+
+.resetLinkSentSuccess {
+  color: green;
+  margin-block: 10px;
+  display: block;
+}
+
+.confirmButtonContainer{
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .confirmButtonContainer{
+    flex-direction: column;
+    }
+  .confirmButton{
+    width: 100%;
+    margin-top: 10px;
+  }
+}

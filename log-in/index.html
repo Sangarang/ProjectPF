@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Log in - ProjectPF</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="log-in.css">
+</head>
+
+<body>
+    <div id="loaderBackdrop">
+        <div id="loaderContainer">
+            <div id="loader"></div>
+        </div>
+    </div>
+    <div class="collageContainer">
+        <div class="column">
+            <div id="tile1" class="tile"></div>
+            <div id="tile2" class="tile"></div>
+        </div>
+        <div class="column">
+            <div id="tile3" class="tile"></div>
+            <div id="tile4" class="tile"></div>
+        </div>
+    </div>
+    <div class="mainContainer">
+        <h2><span class="login header selected">Log in</span><span class="signup header">Sign up</span></h2>
+        <button class="loginButton google" title="Log in with Google">
+            <div class="loginButtonImg"></div>
+            <p>Log in with Google</p>
+        </button>
+        <div class="loginContainerOrDivider">
+            <span>or</span>
+        </div>
+        <div class="loginContainer">
+            <form class="loginForm">
+                <label for="emailLoginInput"></label>
+                <input type="email" id="emailLoginInput" name="emailLoginInput" placeholder="Email" required>
+                <div class="confirmButtonContainer">
+                    <label for="passwordLoginInput"></label>
+                    <input type="password" id="passwordLoginInput" name="passwordLoginInput" placeholder="Password"
+                        required>
+                    <button class="confirmLogin confirmButton" type="submit">&#8250;</button>
+                </div>
+            </form>
+            <a class="forgotPasswordButton">Forgot password?</a>
+            <form class="resetPasswordForm hide confirmButtonContainer">
+                <label for="resetPasswordEmailInput"></label>
+                <input type="email" id="resetPasswordEmailInput" name="resetPasswordEmailInput" placeholder="Enter email to reset password" required>
+                    <button class="confirmResetPassword confirmButton" type="submit">&#8250;</button>
+            </form>
+        </div>
+        <div class="signupContainer hide">
+            <form class="signupForm">
+                <label for="emailSignupInput"></label>
+                <input type="email" id="emailSignupInput" name="emailSignupInput" placeholder="Email" required>
+                <div>
+                    <label for="passwordSignupInput"></label>
+                    <input type="password" id="passwordSignupInput" name="passwordSignupInput" placeholder="Password"
+                        pattern=".{12,}" required title="Minimum 12 characters" autocomplete="new-password">
+                </div>
+                <div class="confirmButtonContainer">
+                    <label for="confirmPasswordSignupInput"></label>
+                    <input type="password" id="confirmPasswordSignupInput" name="confirmPasswordSignupInput"
+                        placeholder="Retype password" required autocomplete="new-password">
+                    <button class="confirmSignup confirmButton" type="submit">&#8250;</button>
+                </div>
+            </form>
+            <div class="passwordRequirements">
+                <small id="length" class="invalid">Minimum 12 characters</small>
+            </div>
+        </div>
+        <small class="errorMessage"></small>
+    </div>
+
+    <footer>
+        <div class="appNameWatermark">
+            <p>ProjectPF.app</p>
+        </div>
+    </footer>
+</body>
+
+<script src="/login-bundle.js"></script>
+
+</html>
