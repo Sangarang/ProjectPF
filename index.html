@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme-hue="orange" data-theme-mode="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectPF</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,-25" />
+
+<body>
+  <div id="loaderBackdrop">
+    <div id="loaderContainer">
+      <div id="loader"></div>
+    </div>
+  </div>
+  <main>
+    <!-- The main body for the app. (Hides on startup) -->
+    <!-- The highest div is the master container. It seperates the loaded columns from the prompt creating new columns.-->
+    <div id="masterContainer">
+      <!-- Div containing all loaded columns. -->
+      <div id="mainContainer">
+        <!-- Columns would sit in here -->
+        <!-- Under the columns would contain the header container. -->
+        <!-- Under the header container would contain the column title, the edit button and add button. -->
+        <!-- Alongside the header container would be the the column to contain the tasks that can be dragged into. -->
+      </div>
+      <!-- Div that is the prompt to create new columns; sits along side the main container. -->
+      <div class="columnContainer">
+        <label for="newColumnInput"></label>
+        <input type="text" name="newColumnInput" placeholder="Add column" id="newColumnInput" style="margin-top: 5px;"
+          maxlength="80">
+      </div>
+    </div>
+
+    <!-- Popup modal for settings and about page -->
+    <div id="popupModalSettings" class="popupModal">
+      <div id="popupModalContentSettings" class="modalContent">
+        <div class="modalContentHeader">
+          <h2>Settings</h2>
+          <button id="closePopupModalSettings" class="closePopupModal">&times;</button>
+        </div>
+        <div class="masterSettingContainer">
+          <div class="settingContainer">
+            <span>Hue</span>
+            <div id="hueSelectorGridContainer">
+              <div class="hueItem red"></div>
+              <div class="hueItem orange selected"></div>
+              <div class="hueItem green"></div>
+              <div class="hueItem blue"></div>
+              <div class="hueItem purple"></div>
+              <div class="hueItem black"></div>
+            </div>
+          </div>
+          <div class="settingContainer">
+            <span>Dark theme</span>
+            <div id="themeSelectorGridContainer">
+              <!-- Rounded switch -->
+              <label class="themeSwitch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <div class="settingContainer">
+            <span>Profile picture</span>
+            <div id="accountPictureGridContainer">
+              <div id="pictureFaces">
+                <span class="material-symbols-rounded sentiment_excited">sentiment_excited</span>
+                <span class="material-symbols-rounded sentiment_very_satisfied">sentiment_very_satisfied</span>
+                <span class="material-symbols-rounded mood">mood</span>
+                <span class="material-symbols-rounded sentiment_satisfied">sentiment_satisfied</span>
+                <span class="material-symbols-rounded sentiment_calm">sentiment_calm</span>
+                <span class="material-symbols-rounded sentiment_content">sentiment_content</span>
+                <span class="material-symbols-rounded sentiment_neutral">sentiment_neutral</span>
+                <span class="material-symbols-rounded sentiment_dissatisfied">sentiment_dissatisfied</span>
+                <span class="material-symbols-rounded sentiment_sad">sentiment_sad</span>
+                <span class="material-symbols-rounded mood_bad">mood_bad</span>
+                <span class="material-symbols-rounded sentiment_very_dissatisfied">sentiment_very_dissatisfied</span>
+                <span class="material-symbols-rounded sentiment_worried">sentiment_worried</span>
+                <span class="material-symbols-rounded sentiment_frustrated">sentiment_frustrated</span>
+                <span class="material-symbols-rounded sentiment_stressed">sentiment_stressed</span>
+                <span
+                  class="material-symbols-rounded sentiment_extremely_dissatisfied">sentiment_extremely_dissatisfied</span>
+              </div>
+              <span class="material-symbols-rounded account_circle">account_circle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popupModalAbout" class="popupModal">
+      <div id="popupModalContentAbout" class="modalContent">
+        <div class="modalContentHeader">
+          <h2>About</h2>
+          <button id="closePopupModalAbout" class="closePopupModal">&times;</button>
+        </div>
+        <p><a href="mailto:projprodfel@gmail.com">projprodfel@gmail.com</a></p>
+        <p><small>© Sang Le 2024</small></p>
+      </div>
+    </div>
+      <div id="popupModalError" class="hide">
+        <span class="errorSymbol">&excl;</span>
+        <strong>Error: <span class="errorMessage"></span></strong>
+        <small class="helpErrorMessage">Your previous action was not processed. This error shouldn't occur. Please try reloading the page to fix the issue.</small>
+          <button id="closePopupModalError" class="closePopupModal">&times;</button>
+      </div>
+  </main>
+  <footer>
+    <!-- The master button for access to settings, about, and account details (hides on startup). Contains the dropupMenu and the actual button div. -->
+    <div id="masterButton">
+      <!-- Container to seperate dropupMenu and the button. -->
+      <div id="buttonContainer">
+        <span class="accountImg material-symbols-rounded"></span>
+        <div id="expandMoreIcon"></div>
+      </div>
+      <div id="dropupMenu">
+        <button id="logoutButton">Log out</button>
+        <button id="aboutButton"> About</button>
+        <button id="settingsButton"> Settings</button>
+        <div id="accountDetailsContainer">
+          <span class="accountImg material-symbols-rounded"></span>
+          <div id="accountTextDetailsContainer">
+            <p id="accountName"></p>
+            <p id="accountEmail"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="appNameWatermark">
+      <p>ProjectPF.app</p>
+    </div>
+  </footer>
+</body>
+
+<script src="main-bundle.js"></script>
+
+</html>
